@@ -60,9 +60,23 @@ router.delete('/delete/:id',(req,res,next)=>{
   })
 });
 
-
 router.get('/getPersonal', (req,res,next)=>{
   PersonalModel.find({}, (error, personal)=>{
+    if(error){
+      return res.status(500).json({success: false});
+    }
+    if(personal){
+      return res.status(200).json({success: true});
+    }
+    else{
+      return res.status(404).json({success: false});
+    }
+  })
+});
+
+router.get('/getPersonal/:id', (req,res,next)=>{
+  var id = req.params.id;
+  PersonalModel.findById(id, (error, personal)=>{
     if(error){
       return res.status(500).json({success: false});
     }
