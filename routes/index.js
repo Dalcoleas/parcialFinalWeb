@@ -21,7 +21,7 @@ router.post('/crear', (req,res,next)=>{
       return res.status(500).json({success: false});
     }
     if(personal){
-      return res.status(200).json({success: true});
+      return res.status(200).json({success: true, message : "Creado." });
     }
     else{
       return res.status(404).json({success: false});
@@ -29,7 +29,7 @@ router.post('/crear', (req,res,next)=>{
   });
 });
 
-router.put('/update/:id', (req, res, next)=>{
+router.post('/update/:id', (req, res, next)=>{
   var id = req.params.id;
   var body = {nombre : req.body.nombre, cv : req.body.cv, contratos: req.body.contratos};
   PersonalModel.findByIdAndUpdate(id,body, {new: true}, (error, personal)=>{
@@ -37,7 +37,7 @@ router.put('/update/:id', (req, res, next)=>{
       return res.status(500).json({success: false});
     }
     if(personal){
-      return res.status(200).json({success: true});
+      return res.status(200).json({success: true, message : "Actualizado."});
     }
     else{
       return res.status(404).json({success: false});
@@ -52,7 +52,7 @@ router.delete('/delete/:id',(req,res,next)=>{
       return res.status(500).json({success: false});
     }
     if(personal){
-      return res.status(200).json({success: true});
+      return res.status(200).json({success: true, message : "Eliminado."});
     }
     else{
       return res.status(404).json({success: false});
@@ -66,7 +66,7 @@ router.get('/getPersonal', (req,res,next)=>{
       return res.status(500).json({success: false});
     }
     if(personal){
-      return res.status(200).json({success: true});
+      return res.status(200).json({success: true,  message : "Encontrados."});
     }
     else{
       return res.status(404).json({success: false});
@@ -81,7 +81,7 @@ router.get('/getPersonal/:id', (req,res,next)=>{
       return res.status(500).json({success: false});
     }
     if(personal){
-      return res.status(200).json({success: true});
+      return res.status(200).json({success: true, message : "Encontrado."});
     }
     else{
       return res.status(404).json({success: false});

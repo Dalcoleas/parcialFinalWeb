@@ -19,22 +19,22 @@
   <div class="container">
     <form class="form-inline mt-5" action="/create" method="POST">
       <div class="form-group mx-sm-3 mb-2">
-        <label for="materia" class="sr-only">Materia</label>
-        <input type="text" class="form-control" id="materia" placeholder="Campo 1">
+        <label for="nombre" class="sr-only">Nombre</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Nombre">
       </div>
       <div class="form-group mx-sm-3 mb-2">
-        <label for="uv" class="sr-only">Uv</label>
-        <input type="text" class="form-control" id="uv" placeholder="Campo 2">
+        <label for="cv" class="sr-only">Uv</label>
+        <input type="text" class="form-control" id="cv" placeholder="CV">
       </div>
       <div class="form-group mx-sm-3 mb-2">
-        <label for="descripcion" class="sr-only">Descripcion</label>
-        <input type="text" class="form-control" id="descripcion" placeholder="Campo 3">
+        <label for="contratos" class="sr-only">Descripcion</label>
+        <input type="text" class="form-control" id="contratos" placeholder="No. Contratos">
       </div>
       <button type="submit" class="btn btn-primary mb-2">Guardar</button>
     </form>
 
     <table class="table">
-      <thead class="thead-light text-center">
+      <thead class="thead-dark text-center">
         <tr>
           <th scope="col">ID</th>
           <th scope="col">Nombre</th>
@@ -43,12 +43,19 @@
           <th scope="col">Opciones</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="table text-center">
+        <tr>
+          <th scope="row">1</th>
+          <td>Daniel</td>
+          <td>Soy especial</td>
+          <td>3</td>
+          <td> <button type="button" class="btn btn-success">Act</button> <button type="button" class="btn btn-danger">Eli</button></td>
+        </tr>
       </tbody>
     </table>
-
   </div>
 
+  <script src="/javascripts/main.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
